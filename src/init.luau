@@ -339,32 +339,43 @@ end)
 	```
 ]=]
 i18nom.fusion = Library(function(Fusion)
-	local update = Fusion.Value(false)
-	i18nom.subscribe(function()
-		update:set(not update:get())
+	local LocalizedWithScope
+	local isFusion3 = pcall(function()
+		if Fusion.scoped then
+			local rootScope = Fusion.scoped(Fusion)
+			local update = rootScope:Value(false)
+			i18nom.subscribe(function()
+				update:set(not Fusion.peek(update))
+			end)
+
+			LocalizedWithScope = {
+				__call = function(self, translation: Translation, arguments: { [string]: any })
+					return self._s:Computed(function(use)
+						use(update)
+						local clonedArguments = table.clone(arguments)
+						for k, v in arguments do
+							if type(v) == "table" and v.set then
+								local new = use(v)
+								clonedArguments[k] = new
+							end
+						end
+						return i18nom.t(translation, clonedArguments)
+					end)
+				end
+			}
+		end
 	end)
 
-	local LocalizedWithScope
-	if Fusion.scoped then
-		LocalizedWithScope = {
-			__call = function(self, translation: Translation, arguments: { [string]: any })
-				return self._s:Computed(function(use)
-					use(update)
-					local clonedArguments = table.clone(arguments)
-					for k, v in arguments do
-						if type(v) == "table" and v.get then
-							local new = use(v)
-							clonedArguments[k] = new
-						end
-					end
-					return i18nom.t(translation, clonedArguments)
-				end)
-			end
-		}
+	local update
+	if not isFusion3 then
+		update = Fusion.Value(false)
+		i18nom.subscribe(function()
+			update:set(not update:get())
+		end)
 	end
 
 	return {
-		Localized = function(translation: Translation, arguments: { [string]: any })
+		Localized = if update then function(translation: Translation, arguments: { [string]: any })
 			return Fusion.Computed(function()
 				update:get()
 				local clonedArguments = table.clone(arguments)
@@ -376,12 +387,12 @@ i18nom.fusion = Library(function(Fusion)
 				end
 				return i18nom.t(translation, clonedArguments)
 			end)
-		end,
-		LocalizedOf = function(scope): (translation: Translation, arguments: { [string]: any }) -> (typeof(LocalizedWithScope.__call({}::any,{}::any,{}::any)))
+		end else nil,
+		LocalizedOf = if isFusion3 then function(scope): (translation: Translation, arguments: { [string]: any }) -> (typeof(LocalizedWithScope.__call({}::any,{}::any,{}::any)))
 			return setmetatable({
 				_s = scope
 			}, LocalizedWithScope) :: any
-		end
+		end else nil
 	}
 end)
 
