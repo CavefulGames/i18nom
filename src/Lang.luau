@@ -1,4 +1,4 @@
-export type Lang="es"|"ak"|"is"|"ks"|"ms"|"os"|"ps"|"ss"|"tr"|"ur"|"sk"|"oc"|"tk"|"ik"|"uz"|"as"|"cs"|"bs"|"fr"|"hr"|"kr"|"ab"|"dz"|"or"|"hz"|"sr"|"zu"|"oj"|"lb"|"nb"|"az"|"fj"|"ar"|"br"|"cr"|"my"|"ky"|"bi"|"ca"|"ba"|"aa"|"ga"|"fa"|"zh"|"da"|"ka"|"ja"|"ia"|"ha"|"ay"|"na"|"si"|"la"|"ii"|"hi"|"fi"|"mi"|"li"|"ki"|"ta"|"bh"|"ch"|"ts"|"th"|"mh"|"bo"|"co"|"rw"|"za"|"kw"|"bg"|"ny"|"lg"|"kg"|"ng"|"mg"|"no"|"ml"|"xh"|"ig"|"tg"|"io"|"lo"|"ko"|"fo"|"eo"|"ho"|"wo"|"an"|"bn"|"wa"|"jv"|"cv"|"dv"|"vo"|"vi"|"yi"|"uk"|"ug"|"ff"|"kv"|"lv"|"af"|"nv"|"tl"|"rn"|"sn"|"tn"|"mn"|"nn"|"tw"|"so"|"to"|"ty"|"av"|"ln"|"en"|"ti"|"gn"|"sg"|"sw"|"iu"|"bm"|"am"|"sv"|"eu"|"su"|"cu"|"ru"|"ee"|"de"|"ce"|"be"|"ae"|"lu"|"ku"|"ne"|"sm"|"rm"|"st"|"sq"|"ie"|"he"|"tt"|"ve"|"km"|"te"|"se"|"gv"|"sc"|"sa"|"ro"|"it"|"qu"|"kj"|"ht"|"et"|"kk"|"pi"|"pa"|"om"|"yo"|"nr"|"pt"|"mt"|"mk"|"mr"|"lt"|"sl"|"nd"|"kn"|"hy"|"id"|"pl"|"gd"|"nl"|"kl"|"hu"|"sd"|"gu"|"gl"|"fy"|"el"|"cy" return{--- 스페인어 - Español
+return{--- 스페인어 - Español
 ["Spanish"]="es",
 --- 아칸어 - Akan
 ["Akan"]="ak",
