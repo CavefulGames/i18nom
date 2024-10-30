@@ -4,7 +4,7 @@
 반응형 로블록스 UI 프레임워크와 Luau를 위한 현지화 라이브러리
 
 ## 설치
-- pesde로 설치 (지원되는 환경: `luau`, `roblox`)
+pesde로 설치 (지원되는 환경: `luau`, `roblox`)
 ```sh
 pesde add caveful_games/i18nom
 ```
