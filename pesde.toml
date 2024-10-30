@@ -1,0 +1,15 @@
+name = "caveful_games/i18nom"
+version = "0.1.0"
+description = "I18n(Internationalization) library for Luau and Reactive UI library for Roblox"
+authors = ["jiwonz"]
+repository = "https://github.com/CavefulGames/i18nom"
+license = "MIT"
+includes = ["pesde.toml", "submodules", "src", "README.md"]
+workspace_members = ["dist/src"]
+
+[target]
+environment = "luau"
+lib = "src/init.luau"
+
+[indices]
+default = "https://github.com/daimond113/pesde-index"

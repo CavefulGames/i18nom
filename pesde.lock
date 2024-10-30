@@ -1,0 +1,6 @@
+name = "caveful_games/i18nom"
+version = "0.1.0"
+target = "luau"
+
+[workspace."caveful_games/i18nom"]
+roblox = "dist/src"
