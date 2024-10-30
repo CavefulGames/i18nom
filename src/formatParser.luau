@@ -1,3 +1,5 @@
+--!nonstrict
+
 local parser = require("../submodules/parser")
 local createParser = parser.createParser
 local eof = parser.eof

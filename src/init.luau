@@ -1,5 +1,3 @@
---!strict
-
 local Lang = require("./Lang")
 local nativeLang = require("./nativeLang")
 local formatParser = require("./formatParser")

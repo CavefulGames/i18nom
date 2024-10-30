@@ -1,5 +1,3 @@
---!strict
-
 export type Library<T, E> = {
 	__index: (self: Library<T, E>, key: any) -> (),
 	_onImport: () -> (),
