@@ -1,4 +1,4 @@
-[한국어](https://github.com/CavefulGames/i18nom/blob/main/README_kr.md) 👈
+[한국어](README_kr.md) 👈
 # English
 
 ## i18nom
